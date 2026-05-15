@@ -24,6 +24,15 @@ st.set_page_config(
 st.markdown("""
 <style>
 
+/* Remove Top White Header */
+header {
+    background: transparent !important;
+}
+
+[data-testid="stHeader"] {
+    background: transparent;
+}
+
 /* Main App Background */
 .stApp {
     background-color: #0F172A;
@@ -206,10 +215,47 @@ It is NOT a clinical diagnostic system.
 
     st.markdown("### Example Inputs")
 
-    st.code("I feel hopeless and tired")
-    st.code("I am anxious all the time")
-    st.code("I want to end my life")
-    st.code("Today was a beautiful day")
+    st.markdown("""
+<div style="
+background-color:#334155;
+padding:12px;
+border-radius:10px;
+margin-bottom:10px;
+color:white;
+">
+I feel hopeless and tired
+</div>
+
+<div style="
+background-color:#334155;
+padding:12px;
+border-radius:10px;
+margin-bottom:10px;
+color:white;
+">
+I am anxious all the time
+</div>
+
+<div style="
+background-color:#334155;
+padding:12px;
+border-radius:10px;
+margin-bottom:10px;
+color:white;
+">
+I want to end my life
+</div>
+
+<div style="
+background-color:#334155;
+padding:12px;
+border-radius:10px;
+margin-bottom:10px;
+color:white;
+">
+Today was a beautiful day
+</div>
+""", unsafe_allow_html=True)
 
 # ==============================
 # TITLE

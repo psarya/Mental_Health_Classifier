@@ -342,7 +342,7 @@ Mental_Health_Classifier/
 │   ├── tfidf.pkl
 │   └── label_encoder.pkl
 │
-├── screenshots/
+├── app_image/
 │   ├── app_home.png
 │   ├── app_result.png
 │   └── app_probabilities.png

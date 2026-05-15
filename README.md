@@ -1,6 +1,6 @@
 # Mental Health Status Classification from Social Media Text
 
-> **Project #26 — Predictive Analytics (AY 2025–26)**
+> **Project #26 — Predictive Analytics (Group project-2)**
 
 [![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://mentalhealthclassifier-predictiveproject.streamlit.app/)
 

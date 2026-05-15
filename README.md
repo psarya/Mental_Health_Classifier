@@ -258,19 +258,22 @@ These approaches help interpret which textual patterns strongly influence predic
 
 ### Home Screen
 
-![Home Screen](app_images/app_home.png)
+![Home Screen] <img width="1920" height="1197" alt="app_home" src="https://github.com/user-attachments/assets/61db7ad8-8f90-41a5-a060-51f715aa602d" />
+
 
 ---
 
 ### Prediction Output
 
-![Prediction Result](app_images/app_result.png)
+![Prediction Result]<img width="1920" height="1888" alt="app_result" src="https://github.com/user-attachments/assets/d561dbe5-db6c-42f3-a74b-eceb0fb129eb" />
+
 
 ---
 
 ### Example Prediction
 
-![Prediction Example](app_images/app_probabilities.png)
+![Prediction Example]<img width="1920" height="1888" alt="app_probabilities" src="https://github.com/user-attachments/assets/fec200b1-b09a-4699-b699-168192f41b83" />
+
 ---
 
 ## ⚖️ Ethical Considerations

@@ -1,0 +1,450 @@
+{
+  "classes": [
+    "Anxiety",
+    "Depression",
+    "Normal",
+    "Suicidal"
+  ],
+  "svm_acc": 0.748,
+  "svm_f1": 0.7456,
+  "lr_acc": 0.7581,
+  "lr_f1": 0.7579,
+  "svm_cm": [
+    [
+      146,
+      63,
+      29,
+      10
+    ],
+    [
+      7,
+      163,
+      29,
+      49
+    ],
+    [
+      3,
+      13,
+      227,
+      5
+    ],
+    [
+      1,
+      33,
+      8,
+      206
+    ]
+  ],
+  "lr_cm": [
+    [
+      188,
+      40,
+      12,
+      8
+    ],
+    [
+      19,
+      153,
+      23,
+      53
+    ],
+    [
+      11,
+      16,
+      210,
+      11
+    ],
+    [
+      3,
+      34,
+      10,
+      201
+    ]
+  ],
+  "top_features": {
+    "Anxiety": [
+      [
+        "anxiety",
+        13.495
+      ],
+      [
+        "restless",
+        8.9262
+      ],
+      [
+        "anxious",
+        8.4765
+      ],
+      [
+        "worried",
+        6.7929
+      ],
+      [
+        "nervous",
+        6.7579
+      ],
+      [
+        "worry",
+        5.6671
+      ],
+      [
+        "restlessness",
+        4.6457
+      ],
+      [
+        "worrying",
+        4.5233
+      ],
+      [
+        "fear",
+        3.7867
+      ],
+      [
+        "freaking",
+        3.6983
+      ],
+      [
+        "panic",
+        3.3997
+      ],
+      [
+        "cancer",
+        3.3741
+      ],
+      [
+        "symptom",
+        3.1312
+      ],
+      [
+        "scared",
+        3.0986
+      ],
+      [
+        "normal",
+        2.8382
+      ],
+      [
+        "anxiously",
+        2.705
+      ],
+      [
+        "lump",
+        2.6294
+      ],
+      [
+        "shaking",
+        2.6164
+      ],
+      [
+        "terrified",
+        2.5798
+      ],
+      [
+        "gad",
+        2.5645
+      ]
+    ],
+    "Depression": [
+      [
+        "depression",
+        13.6372
+      ],
+      [
+        "depressed",
+        7.0217
+      ],
+      [
+        "cannot",
+        6.084
+      ],
+      [
+        "doe",
+        5.0622
+      ],
+      [
+        "pression",
+        3.7291
+      ],
+      [
+        "gon",
+        3.4174
+      ],
+      [
+        "wan",
+        3.0433
+      ],
+      [
+        "life",
+        3.0359
+      ],
+      [
+        "depressive",
+        2.8258
+      ],
+      [
+        "antidepressant",
+        2.6602
+      ],
+      [
+        "http",
+        2.6504
+      ],
+      [
+        "doe anyone",
+        2.269
+      ],
+      [
+        "everyday",
+        2.0144
+      ],
+      [
+        "alive",
+        1.9741
+      ],
+      [
+        "alone",
+        1.9625
+      ],
+      [
+        "therapy",
+        1.9565
+      ],
+      [
+        "anymore",
+        1.9385
+      ],
+      [
+        "cried",
+        1.8491
+      ],
+      [
+        "numb",
+        1.8315
+      ],
+      [
+        "care",
+        1.8218
+      ]
+    ],
+    "Normal": [
+      [
+        "url",
+        3.482
+      ],
+      [
+        "ptsd",
+        2.6453
+      ],
+      [
+        "bored",
+        1.982
+      ],
+      [
+        "met",
+        1.8867
+      ],
+      [
+        "yes",
+        1.8514
+      ],
+      [
+        "twitter",
+        1.809
+      ],
+      [
+        "quot",
+        1.7776
+      ],
+      [
+        "eid",
+        1.7608
+      ],
+      [
+        "boy",
+        1.502
+      ],
+      [
+        "jyp",
+        1.423
+      ],
+      [
+        "gon",
+        1.4066
+      ],
+      [
+        "holiday",
+        1.406
+      ],
+      [
+        "relationship",
+        1.3533
+      ],
+      [
+        "teenager",
+        1.3461
+      ],
+      [
+        "album",
+        1.3331
+      ],
+      [
+        "raya",
+        1.3168
+      ],
+      [
+        "mutual",
+        1.2972
+      ],
+      [
+        "minecraft",
+        1.249
+      ],
+      [
+        "dreamies",
+        1.2416
+      ],
+      [
+        "doe",
+        1.2251
+      ]
+    ],
+    "Suicidal": [
+      [
+        "suicide",
+        7.3035
+      ],
+      [
+        "cannot",
+        7.2654
+      ],
+      [
+        "suicidal",
+        6.9398
+      ],
+      [
+        "kill",
+        6.2793
+      ],
+      [
+        "die",
+        5.8516
+      ],
+      [
+        "anymore",
+        3.9146
+      ],
+      [
+        "killing",
+        3.7669
+      ],
+      [
+        "gun",
+        3.5822
+      ],
+      [
+        "end",
+        3.4056
+      ],
+      [
+        "life",
+        3.337
+      ],
+      [
+        "goodbye",
+        3.264
+      ],
+      [
+        "overdose",
+        3.2502
+      ],
+      [
+        "pill",
+        3.1803
+      ],
+      [
+        "dead",
+        3.1043
+      ],
+      [
+        "fucking",
+        3.0389
+      ],
+      [
+        "attempt",
+        3.016
+      ],
+      [
+        "km",
+        2.9894
+      ],
+      [
+        "death",
+        2.8968
+      ],
+      [
+        "alive",
+        2.8964
+      ],
+      [
+        "attempted",
+        2.7989
+      ]
+    ]
+  },
+  "svm_sens_spec": {
+    "Anxiety": {
+      "sensitivity": 0.5887,
+      "specificity": 0.9852,
+      "precision": 0.9299
+    },
+    "Depression": {
+      "sensitivity": 0.6573,
+      "specificity": 0.8535,
+      "precision": 0.5993
+    },
+    "Normal": {
+      "sensitivity": 0.9153,
+      "specificity": 0.9113,
+      "precision": 0.7747
+    },
+    "Suicidal": {
+      "sensitivity": 0.8306,
+      "specificity": 0.914,
+      "precision": 0.763
+    }
+  },
+  "lr_sens_spec": {
+    "Anxiety": {
+      "sensitivity": 0.7581,
+      "specificity": 0.9556,
+      "precision": 0.8507
+    },
+    "Depression": {
+      "sensitivity": 0.6169,
+      "specificity": 0.879,
+      "precision": 0.6296
+    },
+    "Normal": {
+      "sensitivity": 0.8468,
+      "specificity": 0.9395,
+      "precision": 0.8235
+    },
+    "Suicidal": {
+      "sensitivity": 0.8105,
+      "specificity": 0.9032,
+      "precision": 0.7363
+    }
+  },
+  "train_dist": {
+    "Normal": 17338,
+    "Depression": 14493,
+    "Suicidal": 11194,
+    "Anxiety": 5497
+  },
+  "test_dist": {
+    "Anxiety": 248,
+    "Depression": 248,
+    "Normal": 248,
+    "Suicidal": 248
+  }
+}

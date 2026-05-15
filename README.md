@@ -1,9 +1,10 @@
-# 🧠 Mental Health Status Classification from Social Media Text
+# Mental Health Status Classification from Social Media Text
 
-> Predictive Analytics Course Project | Academic Year 2025–26
+> **Project #26 — Predictive Analytics (AY 2025–26)**
+
+[![Streamlit App](https://static.streamlit.io/badges/streamlit_badge_black_white.svg)](https://mentalhealthclassifier-predictiveproject.streamlit.app/)
 
 ---
-
 # 📋 Project Details
 
 | Field | Details |
@@ -18,68 +19,49 @@
 
 # 👥 Team Members
 
-| Name | Contribution |
+| Name |  |
 |---|---|
-| Sree | EDA, Evaluation, README |
-| Member 2 | Preprocessing, Feature Engineering |
-| Member 3 | Model Building, Deployment |
-| Member 4 | PPT, Documentation, Ethics |
+| Project 2 | Group32 |
+| Arya Sukku |  |
+| Sreekutty Santhosh  |  |
+| Aparna V |  |
 
-> Replace placeholder names and contributions with actual team details.
+
 
 ---
 
-# 📌 Project Overview
+---
 
-Mental health conditions such as depression, anxiety, PTSD, and suicidal ideation are increasingly discussed on social media platforms like Reddit and Twitter.
+## 📌 Problem Statement
 
-This project focuses on building an NLP-based machine learning system capable of classifying social media posts into mental health categories:
+Mental health conditions such as depression, anxiety, PTSD, and suicidal ideation are increasingly expressed on social media platforms like Reddit and Twitter. Detecting such patterns manually from large-scale textual data is difficult, time-consuming, and often impractical.
+
+This project focuses on automatically classifying social media posts into mental health categories using Natural Language Processing (NLP) and Machine Learning techniques.
+
+The classification categories include:
 
 - Anxiety
 - Depression
 - Suicidal
 - Normal
 
-The project compares traditional machine learning techniques using TF-IDF + SVM/Logistic Regression with transformer-based deep learning models such as BERT/DistilBERT.
+The project compares traditional machine learning approaches using TF-IDF + SVM/Logistic Regression with transformer-based deep learning models such as BERT/DistilBERT.
 
 ---
 
-# ❗ Problem Statement
+## 🎯 Success Criterion
 
-Social media users often express emotional distress online through text posts. Manual analysis of large-scale online content is difficult and time-consuming.
-
-This project aims to develop an NLP-based classification system capable of identifying mental health-related linguistic patterns from social media text.
-
-> ⚠️ This system is intended for educational and research purposes only and is not a clinical diagnostic tool.
+| Metric | Target | Rationale |
+|---|---|---|
+| Macro F1-score | ≥ 0.85 | Ensures balanced performance across all mental health classes |
 
 ---
 
-# 🎯 Objectives
+## 📊 Dataset
 
-- Perform text preprocessing and exploratory data analysis (EDA)
-- Extract meaningful linguistic features using TF-IDF
-- Train and evaluate machine learning models such as Logistic Regression and SVM
-- Fine-tune BERT/DistilBERT models
-- Compare traditional ML with transformer-based NLP
-- Evaluate models using:
-  - Accuracy
-  - Precision
-  - Recall
-  - F1-score
-  - Sensitivity
-  - Specificity
-- Discuss ethical considerations and responsible AI usage
-- Deploy the model using Streamlit
+The dataset was collected from publicly available Reddit/Twitter mental health datasets containing user-generated textual posts related to emotional and psychological conditions.
 
----
-
-# 📂 Dataset Description
-
-## Dataset Source
-
-The dataset was collected from publicly available Reddit/Twitter mental health datasets.
-
-## Dataset Files
+### Dataset Files
 
 ```bash
 mental_health_unbalanced.csv
@@ -87,20 +69,48 @@ mental_health_feature_engineered.csv
 mental_health_combined_test.csv
 ```
 
-## Classes
+### Classes
 
 | Label | Description |
 |---|---|
 | Anxiety | Panic, stress, and worry-related posts |
-| Depression | Sadness, hopelessness, low-energy posts |
+| Depression | Sadness, hopelessness, and low-energy posts |
 | Suicidal | Self-harm and suicidal ideation posts |
 | Normal | General non-mental-health-related posts |
 
+### Dataset Characteristics
+
+- Multi-class NLP classification problem
+- Short-form and long-form social media text
+- Imbalanced emotional vocabulary distribution
+- Informal language, slang, abbreviations, and noisy text patterns
+
+Mental health text classification is particularly challenging because multiple categories often share overlapping emotional vocabulary and contextual patterns.
+
 ---
 
-# ⚙️ Data Preprocessing
+## 🔬 Methodology — Full Data Science Lifecycle
 
-The following preprocessing steps were applied:
+All **10 stages** of the Data Science Project Lifecycle were implemented end-to-end:
+
+| Stage | Description |
+|---|---|
+| 1. Problem Definition & Literature Review | Understanding mental health NLP systems and prior research |
+| 2. Data Collection & Understanding | Collecting and understanding social media mental health datasets |
+| 3. Data Preprocessing & Cleaning | Lowercasing, stopword removal, tokenization, lemmatization |
+| 4. Exploratory Data Analysis | Word clouds, class distribution, sentiment analysis, text statistics |
+| 5. Feature Engineering & Selection | TF-IDF vectorization, text statistics, engineered linguistic features |
+| 6. Model Building & Training | Logistic Regression, SVM, BERT/DistilBERT |
+| 7. Model Evaluation & Comparison | Accuracy, Precision, Recall, F1-score, Sensitivity, Specificity |
+| 8. Model Interpretation & Explainability | Feature importance, keyword analysis, SHAP/LIME |
+| 9. Deployment | Streamlit web application for real-time prediction |
+| 10. Documentation | README, PPT presentation, GitHub repository |
+
+---
+
+## ⚙️ Data Preprocessing
+
+The following preprocessing techniques were applied:
 
 - Lowercasing
 - URL removal
@@ -109,13 +119,13 @@ The following preprocessing steps were applied:
 - Tokenization
 - Lemmatization
 
-For BERT-based models, minimal preprocessing was used because transformer tokenizers already handle much of the linguistic processing.
+For transformer-based models such as BERT, minimal preprocessing was used because transformer tokenizers already handle much of the linguistic processing internally.
 
 ---
 
-# 📊 Exploratory Data Analysis (EDA)
+## 📊 Exploratory Data Analysis (EDA)
 
-EDA techniques used:
+EDA techniques used in the project:
 
 - Class distribution analysis
 - Word clouds
@@ -125,13 +135,15 @@ EDA techniques used:
 - Sentiment analysis
 - Correlation heatmaps
 
+These analyses helped identify emotional vocabulary patterns associated with different mental health categories.
+
 ---
 
-# 🧩 Feature Engineering
+## 🧩 Feature Engineering
 
-## TF-IDF Vectorization
+### TF-IDF Vectorization
 
-TF-IDF converts text into numerical vectors based on word importance.
+TF-IDF converts text into numerical vectors based on word importance across the corpus.
 
 ### Features Used
 
@@ -142,118 +154,131 @@ TF-IDF converts text into numerical vectors based on word importance.
 
 - Text length
 - Word count
-- Polarity
+- Sentiment polarity
 - Subjectivity
 - Keyword presence
 - POS tag ratios
 
 ---
 
-# 🤖 Models Used
+## 🤖 Models Used
 
-## Traditional Machine Learning Models
+### Traditional Machine Learning Models
 
-### Logistic Regression
+| Model | Purpose |
+|---|---|
+| Logistic Regression | Baseline NLP classifier |
+| Support Vector Machine (SVM) | High-dimensional sparse text classification |
 
-Used as a baseline classifier for NLP text classification.
+### Deep Learning Model
 
-### Support Vector Machine (SVM)
+| Model | Purpose |
+|---|---|
+| BERT / DistilBERT | Context-aware transformer-based NLP classification |
 
-A powerful classifier effective for high-dimensional sparse TF-IDF vectors.
+### Why BERT?
 
----
-
-## Deep Learning Model
-
-### BERT / DistilBERT
-
-Transformer-based contextual embedding model capable of understanding semantic relationships within text.
-
-### Advantages
-
-- Contextual understanding
-- Better semantic representation
-- Improved classification performance
+Transformer models provide contextual understanding of language and semantic relationships, making them highly effective for complex NLP tasks involving emotional and psychological text patterns.
 
 ---
 
-# 📈 Evaluation Metrics
+## 📈 Results
 
-The models were evaluated using:
+### Model Comparison Summary
 
-- Accuracy
-- Precision
-- Recall
-- F1-score
-- Sensitivity
-- Specificity
-- Confusion Matrix
+| Model | Accuracy | F1-Score | Recall | Notes |
+|---|---|---|---|---|
+| Logistic Regression | 75.81% | 0.7579 | 0.76 | Best overall performance among classical ML models |
+| SVM | 74.80% | 0.7456 | 0.75 | Strong TF-IDF based classification performance |
+| Ensemble Model | 75.30% | 0.7517 | 0.75 | Balanced performance using combined predictions |
+
+> Logistic Regression achieved the highest overall Macro F1-score of **0.7579**, while SVM demonstrated strong performance for sparse high-dimensional TF-IDF features.
 
 ---
 
-# 📊 Results Summary
+### Per-Class Performance — Logistic Regression
 
-| Model | Accuracy | F1-Score | Recall |
+| Class | Precision | Recall | F1-Score |
 |---|---|---|---|
-| Logistic Regression | XX% | XX | XX |
-| SVM | XX% | XX | XX |
-| BERT | XX% | XX | XX |
-
-> Replace placeholder values with actual notebook results.
+| Anxiety | 0.85 | 0.76 | 0.80 |
+| Depression | 0.63 | 0.62 | 0.62 |
+| Normal | 0.82 | 0.85 | 0.83 |
+| Suicidal | 0.74 | 0.81 | 0.77 |
 
 ---
 
-# 🔍 Explainability & Interpretation
+### Per-Class Performance — SVM
 
-The project includes:
+| Class | Precision | Recall | F1-Score |
+|---|---|---|---|
+| Anxiety | 0.93 | 0.59 | 0.72 |
+| Depression | 0.60 | 0.66 | 0.63 |
+| Normal | 0.77 | 0.92 | 0.84 |
+| Suicidal | 0.76 | 0.83 | 0.80 |
+
+---
+
+## 📌 Key Observations
+
+- Logistic Regression achieved the best overall Macro F1-score among the implemented models.
+- SVM achieved very high precision for Anxiety classification but lower recall.
+- The "Normal" class achieved the highest classification performance across both models.
+- Depression classification remained the most challenging category because of overlapping emotional vocabulary patterns.
+- Ensemble learning provided balanced performance but did not significantly outperform Logistic Regression.
+
+---
+
+## 🔍 Model Explainability
+
+The project includes explainability-focused analysis using:
 
 - Important keyword analysis
 - Feature importance visualization
-- SHAP/LIME explainability techniques
+- SHAP/LIME explainability methods
 
-These methods help understand which words strongly influence predictions.
+These approaches help interpret which textual patterns strongly influence predictions.
 
 ---
 
-# 🖥️ Streamlit Deployment
+## 🌐 Live App
 
-The project includes deployment preparation using Streamlit for real-time text prediction.
+🔗 **[Try the deployed Streamlit app →](https://mentalhealthclassifier-predictiveproject.streamlit.app/)**
 
-## Features
+### Features
 
 - User text input
 - Real-time prediction
-- Prediction confidence scores
-- Probability visualization
-- User-friendly dashboard
+- Multi-model comparison
+- Prediction confidence display
+- Interactive web interface
 
 ---
 
-# 🖼️ Application Screenshots
+## 🖼️ Application Screenshots
 
-## Home Screen
+### Home Screen
 
 ![Home Screen](screenshots/app_home.png)
 
 ---
 
-## Prediction Output
+### Prediction Output
 
 ![Prediction Result](screenshots/app_result.png)
 
 ---
 
-## Probability Distribution
+### Probability Visualization
 
 ![Probability Chart](screenshots/app_probabilities.png)
 
 ---
 
-# ⚖️ Ethical Considerations
+## ⚖️ Ethical Considerations
 
-Mental health NLP systems involve highly sensitive information.
+Mental health NLP systems involve highly sensitive personal information and require responsible deployment practices.
 
-## Ethical Concerns Addressed
+### Ethical Concerns Addressed
 
 - Data privacy and confidentiality
 - Risk of false positives and false negatives
@@ -261,11 +286,32 @@ Mental health NLP systems involve highly sensitive information.
 - Responsible AI usage
 - Non-clinical usage disclaimer
 
-> This system should assist professionals, not replace them.
+> This system is intended to assist awareness and research efforts and should not replace professional mental health diagnosis.
 
 ---
 
-# 🛠️ Technologies Used
+## ⚠️ Limitations
+
+- Performance depends heavily on dataset quality and diversity.
+- Informal slang, sarcasm, and ambiguous emotional language may affect predictions.
+- Mental health categories can share overlapping vocabulary patterns.
+- The system is not suitable for clinical diagnosis or emergency intervention.
+
+---
+
+## 🔮 Future Work
+
+Possible future improvements include:
+
+- Multilingual mental health detection
+- Emotion-aware transformer architectures
+- Real-time social media monitoring systems
+- Better explainability techniques
+- Multi-modal analysis using text + audio + image data
+
+---
+
+## 🛠️ Technologies Used
 
 | Category | Tools |
 |---|---|
@@ -278,10 +324,10 @@ Mental health NLP systems involve highly sensitive information.
 
 ---
 
-# 📁 Project Structure
+## 📁 Project Structure
 
 ```bash
-mental-health-classifier/
+Mental_Health_Classifier/
 │
 ├── Mental_Health_Classifier.ipynb
 ├── app.py
@@ -299,91 +345,39 @@ mental-health-classifier/
 │   ├── app_result.png
 │   └── app_probabilities.png
 │
-└── datasets/
+└── Dataset/
 ```
 
 ---
 
-# 🚀 Installation & Setup
-
-## Clone Repository
+## 🚀 How to Run Locally
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/mental-health-classifier.git
-cd mental-health-classifier
-```
+# 1. Clone repository
+git clone https://github.com/YOUR_USERNAME/Mental_Health_Classifier.git
 
----
+# 2. Navigate into project directory
+cd Mental_Health_Classifier
 
-## Install Dependencies
-
-```bash
+# 3. Install dependencies
 pip install -r requirements.txt
-```
 
----
-
-## Run Notebook
-
-```bash
-jupyter notebook
-```
-
----
-
-## Run Streamlit App
-
-```bash
+# 4. Run Streamlit app
 streamlit run app.py
 ```
 
 ---
 
-# 🌐 Deployment Link
-
-```text
-https://your-streamlit-app-link.streamlit.app/
-```
-
----
-
-# ⚠️ Limitations
-
-- Performance depends heavily on dataset quality
-- Informal slang and sarcasm may affect predictions
-- Model is not suitable for clinical diagnosis
-- Possible demographic and linguistic bias
-
----
-
-# 🔮 Future Work
-
-Possible future improvements:
-
-- Multilingual mental health detection
-- Real-time monitoring systems
-- Better explainability techniques
-- Emotion-aware transformers
-- Multi-modal analysis using text + audio + images
-
----
-
-# ✅ Conclusion
-
-This project demonstrates how NLP and machine learning techniques can be applied to identify mental health-related linguistic patterns from social media text.
-
-The comparison between TF-IDF + SVM and BERT highlights the effectiveness of transformer-based contextual understanding for mental health classification tasks.
-
-The project also emphasizes ethical AI, explainability, and responsible deployment in healthcare-related NLP systems.
-
----
-
-# 📚 References
+## 📚 References
 
 - Hugging Face Transformers Documentation
 - Scikit-learn Documentation
 - Streamlit Documentation
-- Research papers on Mental Health NLP
 - Public Reddit/Twitter mental health datasets
+- Research papers on Mental Health NLP
 
 ---
+
+## 📜 License
+
+This project was developed as part of the Predictive Analytics coursework (AY 2025–26).

@@ -19,38 +19,44 @@ st.set_page_config(
 )
 
 # ==============================
-# LIGHT THEME CSS
+# SOFT DARK THEME CSS
 # ==============================
 st.markdown("""
 <style>
 
-.main {
-    background-color: #F7F7FB;
+/* Main App Background */
+.stApp {
+    background-color: #0F172A;
 }
 
+/* Main Container */
 .block-container {
     padding-top: 2rem;
     padding-bottom: 2rem;
 }
 
+/* Titles */
 h1, h2, h3 {
-    color: #2D2D2D;
+    color: #F8FAFC;
 }
 
-p, label {
-    color: #444444;
+/* Normal Text */
+p, label, div {
+    color: #CBD5E1;
     font-size: 16px;
 }
 
+/* Text Area */
 .stTextArea textarea {
-    background-color: white !important;
-    color: black !important;
+    background-color: #1E293B !important;
+    color: #F8FAFC !important;
     border-radius: 12px;
-    border: 1px solid #D6D6D6;
+    border: 1px solid #334155;
     font-size: 16px;
     padding: 12px;
 }
 
+/* Button */
 .stButton button {
     background-color: #7C6CF2;
     color: white;
@@ -67,8 +73,30 @@ p, label {
     color: white;
 }
 
+/* Sidebar */
 [data-testid="stSidebar"] {
-    background-color: #FFFFFF;
+    background-color: #1E293B;
+}
+
+/* Sidebar Text */
+[data-testid="stSidebar"] * {
+    color: #F8FAFC !important;
+}
+
+/* Info Boxes */
+.stAlert {
+    border-radius: 12px;
+}
+
+/* Metric Cards */
+.stMetric {
+    background-color: #1E293B;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+hr {
+    border-color: #334155;
 }
 
 </style>
@@ -158,20 +186,20 @@ with st.sidebar:
     st.title("🧠 About")
 
     st.info("""
-    Mental Health Text Classification System
+Mental Health Text Classification System
 
-    Models Used:
-    • SVM
-    • Logistic Regression
+Models Used:
+• SVM
+• Logistic Regression
 
-    NLP Pipeline:
-    TF-IDF + Text Preprocessing
+NLP Pipeline:
+TF-IDF + Text Preprocessing
     """)
 
     st.warning("""
-    ⚠️ This tool is for educational purposes only.
+⚠️ This tool is for educational purposes only.
 
-    It is NOT a clinical diagnostic system.
+It is NOT a clinical diagnostic system.
     """)
 
     st.markdown("---")

@@ -258,20 +258,19 @@ These approaches help interpret which textual patterns strongly influence predic
 
 ### Home Screen
 
-![Home Screen](screenshots/app_home.png)
+![Home Screen](app_images/app_home.png)
 
 ---
 
 ### Prediction Output
 
-![Prediction Result](screenshots/app_result.png)
+![Prediction Result](app_images/app_result.png)
 
 ---
 
-### Probability Visualization
+### Example Prediction
 
-![Probability Chart](screenshots/app_probabilities.png)
-
+![Prediction Example](app_images/app_probabilities.png)
 ---
 
 ## ⚖️ Ethical Considerations
@@ -380,4 +379,4 @@ streamlit run app.py
 
 ## 📜 License
 
-This project was developed as part of the Predictive Analytics coursework (AY 2025–26).
+This project was developed as part of  capstone project of the Predictive Analytics course

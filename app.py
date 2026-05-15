@@ -1,3 +1,4 @@
+
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -14,7 +15,7 @@ from nltk.stem import WordNetLemmatizer
 st.set_page_config(
     page_title="Mental Health Classifier",
     page_icon="🧠",
-    layout="centered",
+    layout="centered"
 )
 
 # ==============================
@@ -68,12 +69,6 @@ p, label {
 
 [data-testid="stSidebar"] {
     background-color: #FFFFFF;
-}
-
-.stMetric {
-    background-color: white;
-    padding: 10px;
-    border-radius: 10px;
 }
 
 </style>
@@ -333,9 +328,9 @@ if st.button("Analyze Text"):
                 st.markdown("---")
 
                 st.info("""
-                Predictions from SVM and Logistic Regression may vary slightly.
+Predictions from SVM and Logistic Regression may vary slightly.
 
-                This system is intended for educational and research purposes only.
+This system is intended for educational and research purposes only.
                 """)
 
 # ==============================
@@ -346,9 +341,6 @@ st.markdown("""
 <div style='text-align:center; color:gray;'>
 
 Built using Streamlit, NLP, TF-IDF, SVM, and Logistic Regression
-
-</div>
-""", unsafe_allow_html=True)
 
 </div>
 """, unsafe_allow_html=True)

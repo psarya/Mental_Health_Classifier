@@ -1,4 +1,3 @@
-
 import streamlit as st
 import pandas as pd
 import numpy as np
@@ -15,42 +14,66 @@ from nltk.stem import WordNetLemmatizer
 st.set_page_config(
     page_title="Mental Health Classifier",
     page_icon="🧠",
-    layout="wide",
+    layout="centered",
 )
 
 # ==============================
-# CUSTOM CSS
+# LIGHT THEME CSS
 # ==============================
 st.markdown("""
 <style>
 
 .main {
-    background-color: #0E1117;
+    background-color: #F7F7FB;
+}
+
+.block-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 h1, h2, h3 {
-    color: white;
+    color: #2D2D2D;
 }
 
-.stButton button {
-    width: 100%;
-    border-radius: 12px;
-    height: 50px;
-    font-size: 18px;
-    font-weight: bold;
-    background-color: #6C63FF;
-    color: white;
-}
-
-.stTextArea textarea {
-    border-radius: 12px;
+p, label {
+    color: #444444;
     font-size: 16px;
 }
 
-.result-box {
-    padding: 20px;
-    border-radius: 15px;
-    margin-bottom: 10px;
+.stTextArea textarea {
+    background-color: white !important;
+    color: black !important;
+    border-radius: 12px;
+    border: 1px solid #D6D6D6;
+    font-size: 16px;
+    padding: 12px;
+}
+
+.stButton button {
+    background-color: #7C6CF2;
+    color: white;
+    border-radius: 10px;
+    height: 50px;
+    border: none;
+    font-size: 16px;
+    font-weight: 600;
+    width: 100%;
+}
+
+.stButton button:hover {
+    background-color: #6B5AE0;
+    color: white;
+}
+
+[data-testid="stSidebar"] {
+    background-color: #FFFFFF;
+}
+
+.stMetric {
+    background-color: white;
+    padding: 10px;
+    border-radius: 10px;
 }
 
 </style>
@@ -82,10 +105,12 @@ MENTAL_HEALTH_STOPWORDS = {
 }
 
 def clean_text(text):
+
     if not isinstance(text, str) or not text.strip():
         return ""
 
     text = text.lower()
+
     text = re.sub(r'http\S+|www\S+', '', text)
     text = re.sub(r'@\w+|#\w+', '', text)
     text = re.sub(r'\d+', '', text)
@@ -141,8 +166,8 @@ with st.sidebar:
     Mental Health Text Classification System
 
     Models Used:
-    - SVM
-    - Logistic Regression
+    • SVM
+    • Logistic Regression
 
     NLP Pipeline:
     TF-IDF + Text Preprocessing
@@ -164,17 +189,13 @@ with st.sidebar:
     st.code("Today was a beautiful day")
 
 # ==============================
-# HERO SECTION
+# TITLE
 # ==============================
-st.markdown("""
-<h1 style='text-align:center;'>
-🧠 Mental Health Status Classifier
-</h1>
+st.title("🧠 Mental Health Status Classifier")
 
-<p style='text-align:center; font-size:20px; color:lightgray;'>
-AI-powered NLP system for social media mental health classification
-</p>
-""", unsafe_allow_html=True)
+st.markdown(
+    "Classify social media text into 'Anxiety', 'Depression', 'Suicidal', or 'Normal'."
+)
 
 st.markdown("---")
 
@@ -182,53 +203,68 @@ st.markdown("---")
 # INPUT
 # ==============================
 user_input = st.text_area(
-    "Enter social media text:",
+    "Enter your text here:",
     height=180,
     placeholder="Type a sentence here..."
 )
 
 # ==============================
-# PREDICTION
+# BUTTON
 # ==============================
-if st.button("🔍 Analyze Text"):
+if st.button("Analyze Text"):
 
     if user_input.strip() == "":
-        st.warning("Please enter text.")
+        st.warning("Please enter some text to classify.")
+
     else:
 
-        with st.spinner("Analyzing mental health patterns..."):
+        with st.spinner("Analyzing text..."):
 
             clean_text_input = clean_text(user_input)
 
             if clean_text_input.strip() == "":
-                st.warning("Input became empty after preprocessing.")
+                st.warning(
+                    "The input became empty after preprocessing."
+                )
+
             else:
 
                 text_tfidf = tfidf.transform([clean_text_input])
 
                 # ======================
-                # SVM
+                # SVM PREDICTION
                 # ======================
                 svm_pred_encoded = svm_model.predict(text_tfidf)[0]
-                svm_pred_proba = svm_model.predict_proba(text_tfidf)[0]
+
+                svm_pred_proba = svm_model.predict_proba(
+                    text_tfidf
+                )[0]
+
                 svm_pred_class = label_encoder.inverse_transform(
                     [svm_pred_encoded]
                 )[0]
 
-                svm_conf = np.max(svm_pred_proba) * 100
+                svm_confidence = np.max(svm_pred_proba) * 100
 
                 # ======================
-                # LR
+                # LR PREDICTION
                 # ======================
                 lr_pred_encoded = lr_model.predict(text_tfidf)[0]
-                lr_pred_proba = lr_model.predict_proba(text_tfidf)[0]
+
+                lr_pred_proba = lr_model.predict_proba(
+                    text_tfidf
+                )[0]
+
                 lr_pred_class = label_encoder.inverse_transform(
                     [lr_pred_encoded]
                 )[0]
 
-                lr_conf = np.max(lr_pred_proba) * 100
+                lr_confidence = np.max(lr_pred_proba) * 100
 
-                st.markdown("## 📊 Classification Results")
+                # ======================
+                # RESULTS
+                # ======================
+                st.subheader("📊 Classification Results")
 
                 col1, col2 = st.columns(2)
 
@@ -240,20 +276,20 @@ if st.button("🔍 Analyze Text"):
                     st.markdown("### 🧠 SVM Prediction")
 
                     if svm_pred_class == "Suicidal":
-                        st.error(f"Prediction: {svm_pred_class}")
+                        st.error(f"Predicted Class: {svm_pred_class}")
 
                     elif svm_pred_class == "Depression":
-                        st.warning(f"Prediction: {svm_pred_class}")
+                        st.warning(f"Predicted Class: {svm_pred_class}")
 
                     elif svm_pred_class == "Anxiety":
-                        st.info(f"Prediction: {svm_pred_class}")
+                        st.info(f"Predicted Class: {svm_pred_class}")
 
                     else:
-                        st.success(f"Prediction: {svm_pred_class}")
+                        st.success(f"Predicted Class: {svm_pred_class}")
 
                     st.metric(
                         label="Confidence",
-                        value=f"{svm_conf:.2f}%"
+                        value=f"{svm_confidence:.2f}%"
                     )
 
                     svm_df = pd.DataFrame({
@@ -268,23 +304,23 @@ if st.button("🔍 Analyze Text"):
                 # ======================
                 with col2:
 
-                    st.markdown("### 🤖 Logistic Regression")
+                    st.markdown("### 🤖 Logistic Regression Prediction")
 
                     if lr_pred_class == "Suicidal":
-                        st.error(f"Prediction: {lr_pred_class}")
+                        st.error(f"Predicted Class: {lr_pred_class}")
 
                     elif lr_pred_class == "Depression":
-                        st.warning(f"Prediction: {lr_pred_class}")
+                        st.warning(f"Predicted Class: {lr_pred_class}")
 
                     elif lr_pred_class == "Anxiety":
-                        st.info(f"Prediction: {lr_pred_class}")
+                        st.info(f"Predicted Class: {lr_pred_class}")
 
                     else:
-                        st.success(f"Prediction: {lr_pred_class}")
+                        st.success(f"Predicted Class: {lr_pred_class}")
 
                     st.metric(
                         label="Confidence",
-                        value=f"{lr_conf:.2f}%"
+                        value=f"{lr_confidence:.2f}%"
                     )
 
                     lr_df = pd.DataFrame({
@@ -296,10 +332,10 @@ if st.button("🔍 Analyze Text"):
 
                 st.markdown("---")
 
-                st.warning("""
-                ⚠️ Predictions may vary between models.
+                st.info("""
+                Predictions from SVM and Logistic Regression may vary slightly.
 
-                This system should not replace professional mental health support.
+                This system is intended for educational and research purposes only.
                 """)
 
 # ==============================
@@ -310,6 +346,9 @@ st.markdown("""
 <div style='text-align:center; color:gray;'>
 
 Built using Streamlit, NLP, TF-IDF, SVM, and Logistic Regression
+
+</div>
+""", unsafe_allow_html=True)
 
 </div>
 """, unsafe_allow_html=True)

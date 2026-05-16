@@ -469,12 +469,6 @@ streamlit run app.py
 [10] *Twitter Mental Health Corpus*.  
 🔗 https://www.kaggle.com/datasets/twitter-mental-health
 
-# Team Members Contributions
-| Members | Contributions |
-| --------- | --------- |
-| Arya Suku |
-| Aparna V | 
-| Sreekutty |
 
 ---
 

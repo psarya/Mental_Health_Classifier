@@ -22,9 +22,9 @@
 | Name |  |
 |---|---|
 | Project 2 | Group32 |
-| Arya Sukku |  |
-| Sreekutty Santhosh  |  |
-| Aparna V |  |
+| Arya Sukku |CS-DA(253007)  |
+| Sreekutty Santhosh  | Bio-AI(253213) |
+| Aparna V |CS-DA(253015)  |
 
 
 

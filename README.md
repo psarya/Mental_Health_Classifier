@@ -306,21 +306,21 @@ These approaches help interpret which textual patterns strongly influence predic
 
 ### Home Screen
 
-![Home Screen] <img width="1920" height="1197" alt="app_home" src="https://github.com/user-attachments/assets/61db7ad8-8f90-41a5-a060-51f715aa602d" />
+ <img width="1920" height="1197" alt="app_home" src="https://github.com/user-attachments/assets/61db7ad8-8f90-41a5-a060-51f715aa602d" />
 
 
 ---
 
 ### Prediction Output
 
-![Prediction Result]<img width="1920" height="1888" alt="app_result" src="https://github.com/user-attachments/assets/d561dbe5-db6c-42f3-a74b-eceb0fb129eb" />
+<img width="1920" height="1888" alt="app_result" src="https://github.com/user-attachments/assets/d561dbe5-db6c-42f3-a74b-eceb0fb129eb" />
 
 
 ---
 
 ### Example Prediction
 
-![Prediction Example]<img width="1920" height="1888" alt="app_probabilities" src="https://github.com/user-attachments/assets/fec200b1-b09a-4699-b699-168192f41b83" />
+<img width="1920" height="1888" alt="app_probabilities" src="https://github.com/user-attachments/assets/fec200b1-b09a-4699-b699-168192f41b83" />
 
 ---
 
@@ -379,10 +379,18 @@ Possible future improvements include:
 ```bash
 Mental_Health_Classifier/
 │
-├── Mental_Health_Classifier.ipynb
-├── app.py
-├── requirements.txt
-├── README.md
+├── Dataset/
+│
+├── EDA_images/
+│
+├── Model_results/
+│
+├── app_image/
+│   ├── app_home.png
+│   ├── app_result.png
+│   └── app_probabilities.png
+│
+├── individual_profile/
 │
 ├── models/
 │   ├── svm_model.pkl
@@ -390,12 +398,13 @@ Mental_Health_Classifier/
 │   ├── tfidf.pkl
 │   └── label_encoder.pkl
 │
-├── app_image/
-│   ├── app_home.png
-│   ├── app_result.png
-│   └── app_probabilities.png
+├── .devcontainer/
 │
-└── Dataset/
+├── Mental_Health_Classifier.ipynb
+├── Mental_Health_Status_Classification.pdf
+├── README.md
+├── app.py
+└── requirements.txt
 ```
 
 ---
@@ -404,7 +413,7 @@ Mental_Health_Classifier/
 
 ```bash
 # 1. Clone repository
-git clone https://github.com/YOUR_USERNAME/Mental_Health_Classifier.git
+git clone https://github.com/psarya/Mental_Health_Classifier.git
 
 # 2. Navigate into project directory
 cd Mental_Health_Classifier
